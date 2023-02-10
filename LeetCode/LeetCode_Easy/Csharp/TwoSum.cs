@@ -12,7 +12,6 @@ class TwoSum
                 }
             }
         }
-
         throw new Exception();
     }
 }
