@@ -7,8 +7,7 @@ const map = (arr, fn) => {
     let i = 0
     const result = []
     arr.forEach((item) => {
-        result.push(fn(item, i))
-        ++i
+        result.push(fn(item, i++))
     })
 
     return result
