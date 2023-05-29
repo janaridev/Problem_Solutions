@@ -4,10 +4,9 @@
  * @return {number[]}
  */
 const map = (arr, fn) => {
-    let i = 0
     const result = []
-    arr.forEach((item) => {
-        result.push(fn(item, i++))
+    arr.forEach((item, index) => {
+        result.push(fn(item, index))
     })
 
     return result
