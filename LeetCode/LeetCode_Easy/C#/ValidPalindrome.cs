@@ -1,35 +1,33 @@
-class ValidPalindrome
+public class Solution 
 {
-    public bool Solution(string s)
+    public bool IsPalindrome(string s) 
     {
-        char[] chars = s.ToLower().ToCharArray();
+        string editedPalindrome = s.ToLower().Trim();
+        int left = 0;
+        int right = editedPalindrome.Length - 1;
 
-        int first = 0;
-        int last = chars.Length - 1;
-
-        while (first < last)
+        while (left < right)
         {
-            if (!char.IsLetterOrDigit(chars[first]))
+            if (!char.IsLetterOrDigit(editedPalindrome[left]))
             {
-                ++first;
+                ++left;
                 continue;
             }
 
-            if (!char.IsLetterOrDigit(chars[last]))
+            if (!char.IsLetterOrDigit(editedPalindrome[right]))
             {
-                --last;
+                --right;
                 continue;
             }
 
-            if (chars[first] != chars[last])
+            if (editedPalindrome[left] != editedPalindrome[right])
             {
                 return false;
             }
 
-            ++first;
-            --last;
+            ++left;
+            --right;
         }
-
         return true;
     }
 }
