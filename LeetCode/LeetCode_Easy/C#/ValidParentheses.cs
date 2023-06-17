@@ -1,20 +1,19 @@
-class ValidParentheses
+public class Solution 
 {
-    public bool Solution(string s)
+    public bool IsValid(string s) 
     {
-        var myStack = new Stack<char>();
+        var stack = new Stack<char>();
 
-        foreach (var item in s)
+        foreach(var item in s)
         {
-            if (item == '(') { myStack.Push(')'); continue; }
+            if (item == '(') { stack.Push(')'); continue; }
 
-            if (item == '{') { myStack.Push('}'); continue; }
+            if (item == '{') { stack.Push('}'); continue; }
 
-            if (item == '[') { myStack.Push(']'); continue; }
+            if (item == '[') { stack.Push(']'); continue; }
 
-            if (myStack.Count == 0 || item != myStack.Pop()) { return false; }
+            if (stack.Count() == 0 || stack.Pop() != item) { return false; }
         }
-
-        return myStack.Count == 0;
+        return stack.Count() == 0;
     }
 }
