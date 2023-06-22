@@ -4,19 +4,19 @@
 function memoize(fn) {
   const map = new Map();
 
-  return function(...args) {
-    const key = JSON.stringify(args)
+  return function (...args) {
+    const key = JSON.stringify(args);
     if (map.has(key)) {
-      return map.get(key)
+      return map.get(key);
     }
-    const result = fn(...args)
-    map.set(key, result)
+    const result = fn(...args);
+    map.set(key, result);
 
-    return result
-  }
+    return result;
+  };
 }
 
-/** 
+/**
  * let callCount = 0;
  * const memoizedFn = memoize(function (a, b) {
  *	 callCount += 1;
@@ -24,6 +24,5 @@ function memoize(fn) {
  * })
  * memoizedFn(2, 3) // 5
  * memoizedFn(2, 3) // 5
- * console.log(callCount) // 1 
+ * console.log(callCount) // 1
  */
- 
